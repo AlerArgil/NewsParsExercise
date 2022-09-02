@@ -21,3 +21,6 @@ python manage.py migrate
 
 # Create admin user
 python manage.py createsuperuser
+
+# Для запуска парсинга следует стукнутся на 
+POST {DOMAIN}/parsing
