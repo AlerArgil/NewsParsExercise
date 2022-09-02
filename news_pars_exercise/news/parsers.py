@@ -81,6 +81,8 @@ class OzonParsing(ParsingCore):
         """Create save or update news"""
         news_array = self.get_news()
         for new_array in news_array:
+            if New.objects.filter(title=new_array['title']).exists():
+                continue
             self.headless.get('{}{}'.format(self.url, new_array.get('slug')))
             new_detail_array = json.loads(self.headless.find_element(By.TAG_NAME, 'pre').text)
             tags = [t['name'] for t in new_array['theme']]

@@ -16,6 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from news_pars_exercise.news import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('news', views.ListNewView.as_view(), name="service-list"),
+    path('tag/<str:name>', views.TagWithNewView.as_view(), name="tag-detail"),
+    path('parsing', views.RunParsingView.as_view({'post': 'parsing'}), name="parsing"),
 ]
