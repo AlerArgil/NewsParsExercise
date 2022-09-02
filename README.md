@@ -1,6 +1,8 @@
 # Test
 Testing exercise
 
+# install or update Google Chrome 105.*.****.** version
+
 # Create Enviroment
 python3.X -m venv testenv
 
